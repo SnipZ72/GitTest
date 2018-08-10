@@ -1,7 +1,8 @@
 print "test"
 print "asd"
 print "last"
-123 + 123
-123
-123 + 321
-121
+print 1
+print 15+15
+print 1
+print 15+15
+print "asd"

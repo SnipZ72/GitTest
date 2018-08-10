@@ -23,10 +23,21 @@ public class Test
 	static void Parse(List<string> tok)
 	{
 		int i=0;
+
 		while(i < tok.Count)
 		{
-			if(tok[i] + " " + tok[i+1].Substring(0,6) == "PRINT STRING"){
-				Console.WriteLine(tok[i+1].Substring(8,tok[i+1].Length - 8));
+			//tok[i] + " " + tok[i+1].Substring(0,6) == "PRINT STRING" || tok[i] + " " + tok[i+1].Substring(0,3) == "PRINT NUM" || tok[i] + " " + tok[i+1].Substring(0,4) == "PRINT EXPR"
+			if(tok[i] == "PRINT"){
+				if(tok[i+1].Substring(0,3) == "NUM"){
+						Console.WriteLine(tok[i+1].Substring(4));
+
+					}else if(tok[i+1].Substring(0,4) == "EXPR"){
+						Console.WriteLine(tok[i+1].Substring(5));
+						
+					}else if(tok[i+1].Substring(0,6) == "STRING"){
+					Console.WriteLine(tok[i+1].Substring(8));
+					}				
+					
 			}
 			i+= 2;
 		}
@@ -54,11 +65,11 @@ public class Test
 			}
 			else if(tok == Environment.NewLine || tok == "<EndOfFile>"){
 				if(expr != "" && isexpr == 1){
-					Console.WriteLine(expr + " EXPR");
+					tokens.Add("EXPR " + expr);
 					expr = "";
 					isexpr = 0;
 				}else if (expr != "" && isexpr == 0){
-					Console.WriteLine(expr + " NUM");
+					tokens.Add("NUM " + expr);
 					expr = "";
 				}
 				tok = "";
