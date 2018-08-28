@@ -5,4 +5,5 @@ print 1
 print 15+15
 print 1
 print 15+15
+print 2 * 3 / 3 * 6 + (4 - 2)
 print "asd"

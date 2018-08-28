@@ -76,7 +76,7 @@ public class Test
 			}else if (tok == "0" || tok == "1" || tok == "2" || tok == "3" || tok == "4" || tok == "5" || tok == "6" || tok == "7" || tok == "8" || tok == "9"){
 				expr += tok;
 				tok = "";
-			}else if (tok == "+"){
+			}else if (tok == "+" || tok == "-" || tok == "/" || tok == "*" || tok == "(" || tok == ")"){
 				isexpr = 1;
 				expr += tok;
 				tok = "";
