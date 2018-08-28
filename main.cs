@@ -13,7 +13,7 @@ public class Test
 		if(args.Length > 0){
 			fileContents = GetFileText(args[0].ToString());
 			fileContents += "<EndOfFile>";
-			t =Lex(fileContents);
+			t = Lex(fileContents);
 			Parse(t);
 		}
 
