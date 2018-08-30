@@ -6,7 +6,7 @@
 
 std::string myFilePath;
 std::string str;
-std::string[] tokens;
+std::string* tokens;
 
 int main(int argc, char *argv[])
 {
